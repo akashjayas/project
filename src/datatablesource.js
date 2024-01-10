@@ -24,36 +24,25 @@ export const userColumns = [
     headerName: "Age",
     width: 100,
   },
-  {
-    field: "status",
-    headerName: "Status",
-    width: 160,
-    renderCell: (params) => {
-      return (
-        <div className={`cellWithStatus ${params.row.status}`}>
-          {params.row.status}
-        </div>
-      );
-    },
-  },
+
 ];
 
 //temporary data
 export const userRows = [
   {
     id: 1,
-    username: "Snow",
+    username: "Akash",
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    status: "active",
-    email: "1snow@gmail.com",
-    age: 35,
+   
+    email: "akashjayas@gmail.com",
+    age: 21,
   },
   {
     id: 2,
-    username: "Jamie Lannister",
+    username: "alfred",
     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "2snow@gmail.com",
-    status: "passive",
+    email: "Alfred1223@gmail.com",
+   
     age: 42,
   },
   {
