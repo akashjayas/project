@@ -9,12 +9,12 @@ import {
 } from "recharts";
 
 const data = [
-  { name: "Place1", Total: 1200 },
-  { name: "place2", Total: 2100 },
+  { name: "Place1", Total: 120 },
+  { name: "place2", Total: 210 },
   { name: "place3", Total: 800 },
-  { name: "place4", Total: 1600 },
-  { name: "Place5", Total: 900 },
-  { name: "Place6", Total: 1700 },
+  { name: "place4", Total: 160 },
+  { name: "Place5", Total: 90 },
+  { name: "Place6", Total: 170 },
 ];
 
 const Chart = ({ aspect, title }) => {

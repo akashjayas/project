@@ -2,6 +2,7 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Logout from "./pages/logout/Logout";
 import List from "./pages/list/List";
+import Event from "./pages/event/Event";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -31,7 +32,7 @@ function App() {
               />
             </Route>
             <Route path="products">
-              <Route index element={<List />} />
+              <Route index element={<Event />} />
               <Route path=":productId" element={<Single />} />
               <Route
                 path="new"
