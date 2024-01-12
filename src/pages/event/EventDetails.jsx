@@ -25,14 +25,15 @@ const EventDetails = () => {
   }, [eventId]);
 
   return (
-    <div className="event-details">
-      <Sidebar />
-      <div className="details-container">
-        <Navbar />
+    <div className="list">
+            <Sidebar />
+            <div className="listContainer">
+                <Navbar />
+
         <div className="event-details-content">
           <h2>Event Details</h2>
           <div className="event-info">
-            <img src={eventDetails.imageUrl} alt="Event" className="event-image" />
+            <img src={"https://th.bing.com/th/id/OIP.mKiMi5YuLxFciIAhteUD-wHaE7?rs=1&pid=ImgDetMain"} alt="Event" className="event-image" />
             <div className="event-text">
               <p><strong>Event ID:</strong> {eventDetails.eventId}</p>
               <p><strong>Event Name:</strong> {eventDetails.eventName}</p>
@@ -47,7 +48,7 @@ const EventDetails = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 };
 
