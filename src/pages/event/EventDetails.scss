@@ -1,0 +1,43 @@
+// EventDetails.scss
+
+.event-details {
+    display: flex;
+    height: 100vh;
+  
+    .details-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+    }
+  
+    .event-details-content {
+      max-width: 800px;
+      margin: auto;
+  
+      h2 {
+        text-align: center;
+      }
+  
+      .event-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+  
+        .event-image {
+          max-width: 300px;
+          height: auto;
+          margin-right: 20px;
+        }
+  
+        .event-text {
+          flex: 1;
+  
+          p {
+            margin: 8px 0;
+          }
+        }
+      }
+    }
+  }
+  

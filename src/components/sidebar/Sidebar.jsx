@@ -41,7 +41,7 @@ const Sidebar = () => {
               <span>Users</span>
             </li>
           </Link>
-          <Link to="/products" style={{ textDecoration: "none" }}>
+          <Link to="/event" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
               <span>Events</span>
@@ -78,10 +78,12 @@ const Sidebar = () => {
             <span>Settings</span>
           </li>
           <p className="title">USER</p>
+          <Link to="/Profile" style={{ textDecoration: "none" }}>
           <li>
             <AccountCircleOutlinedIcon className="icon" />
             <span>Profile</span>
           </li>
+          </Link>
           <Link to="/Logout" style={{ textDecoration: "none" }}>
           <li>
             <ExitToAppIcon className="icon" />

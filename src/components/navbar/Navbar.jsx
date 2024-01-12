@@ -26,6 +26,9 @@ const Navbar = () => {
           <input type="text" placeholder="Search..." />
           <SearchOutlinedIcon />
         </div>
+        <div>
+          
+        </div>
         <div className="items">
           <div className="item">
             <LanguageOutlinedIcon className="icon" />
@@ -40,17 +43,7 @@ const Navbar = () => {
           <div className="item">
             <FullscreenExitOutlinedIcon className="icon" />
           </div>
-          <div className="item">
-            <NotificationsNoneOutlinedIcon className="icon" />
-            <div className="counter">1</div>
-          </div>
-          <div className="item">
-            <ChatBubbleOutlineOutlinedIcon className="icon" />
-            <div className="counter">2</div>
-          </div>
-          <div className="item">
-            <ListOutlinedIcon className="icon" />
-          </div>
+          
           <div className="item" onClick={handleAvatarClick} ref={dropdownRef}>
             <img
               src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
@@ -62,7 +55,7 @@ const Navbar = () => {
                  <Link to="/" style={{ textDecoration: "none" }}>
                 <div className="dropdownItem">Dashboard</div>
                 </Link>
-                <Link to="/User" style={{ textDecoration: "none" }}>
+                <Link to="/Profile" style={{ textDecoration: "none" }}>
                 <div className="dropdownItem">Profile</div>
                 </Link>
                 <Link to="/Logout" style={{ textDecoration: "none" }}>
