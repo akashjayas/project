@@ -9,6 +9,7 @@ import { Button, Stack } from '@mui/material';
 import axios from 'axios';
 import { Modal, Upload, Space, message } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
+import axiosInstance from '../login/axiosinstance';
 
 function TouristSpot() {
     const [spotRows, setSpotRows] = useState([]);
@@ -67,7 +68,7 @@ function TouristSpot() {
             fileList.forEach(file => {
                 formData.append("picture", file.originFileObj);
             });
-            await axios.post("http://localhost:8080/updateSpotPicture", formData);
+            await axiosInstance.post("/updateSpotPicture", formData);
             setIsModalVisible(false);
             setFileList([]);
             setSelectedSpotId(null);

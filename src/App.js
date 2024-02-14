@@ -1,5 +1,5 @@
 import Home from "./pages/home/Home";
-import Login from "./pages/login/Login";
+import SignInSide from "./pages/login/Login";
 import Logout from "./pages/logout/Logout";
 import List from "./pages/list/List";
 import New from "./pages/new/New";
@@ -31,9 +31,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/">
-            <Route index element={<Home />} />
+            <Route path="/dashboard" element={<Home />} />
             <Route path="api/login/reg" element={<AdminRegistration />}/>
-            <Route path="login" element={<Login />} />
+            <Route index element={<SignInSide />} />
             <Route path="logout" element={<Logout />} />
 
             <Route path="users">

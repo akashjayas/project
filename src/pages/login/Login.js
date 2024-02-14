@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,38 +12,25 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
+import { useDispatch } from 'react-redux';
+import { loginUserAction } from '../../Auth/auth.action';
 
 const defaultTheme = createTheme();
 
 const SignInSide = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Use useNavigate hook instead of useHistory
+  const dispatch = useDispatch();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    try {
-      const response = await axios.post('http://localhost:8080/login', {
-        email,
-        password,
-        role: 'Admin_Role', // Assuming the role is fixed for admin login
-      });
-
-      if (response.status === 200) {
-        // Login successful
-        console.log(response.data);
-        navigate(`/home/${response.data}`);
-        console.log('Login successful');
-      } else {
-        // Login failed, handle the error
-        console.error('Login failed:', 'Sample error message');
+    const loginData = { email, password };
+    const sucess = await dispatch(loginUserAction(loginData))
+      if (sucess) {
+        navigate('/dashboard');
       }
-    } catch (error) {
-      console.error('Error during login:', error);
-      // Handle unexpected errors
-    }
   };
 
   return (
@@ -77,11 +63,7 @@ const SignInSide = () => {
           >
             <Grid container justifyContent="center" alignItems="center">
               <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                <img
-                  src="https://clipground.com/images/sample-logo-png.jpg"
-                  alt="logo"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
+                <LockOutlinedIcon />
               </Avatar>
             </Grid>
             <Typography component="h1" variant="h5">

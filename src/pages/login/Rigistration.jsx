@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import "./res.scss";
+import "./res.scss"; // Assuming you have a stylesheet for styling
+import { useDispatch } from 'react-redux';
+import { registerUserAction } from '../../Auth/auth.action';
 
 function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -15,17 +16,12 @@ function RegisterPage() {
     userProfile: ''
   });
 
+  const dispatch = useDispatch(); // Corrected to useDispatch()
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:8080/Admin', formData);
-      console.log('Response from backend:', response.data);
-      // Handle success response
-    } catch (error) {
-      console.error('Error sending data:', error);
-      // Handle error response
-    }
-  };
+    dispatch(registerUserAction(formData));
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
