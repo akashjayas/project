@@ -4,6 +4,7 @@ import axios from 'axios';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Navbar from '../../components/navbar/Navbar';
 import './ParticipantDetail.scss';
+import axiosInstance from '../login/axiosinstance';
 
 const ParticipantDetail = () => {
   const { participantId } = useParams();
@@ -12,7 +13,7 @@ const ParticipantDetail = () => {
   useEffect(() => {
     const fetchParticipantDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/Admin/participants/${participantId}`);
+        const response = await axiosInstance.get(`/Admin/participants/${participantId}`);
         setParticipantDetails(response.data);
       } catch (error) {
         console.error('Error fetching participant details:', error);

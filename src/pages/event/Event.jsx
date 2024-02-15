@@ -9,6 +9,7 @@ import { fetchEventsData } from "../../DataStorage";
 import { eventDelete } from "../../components/DeleteStorage";
 import { Button, Modal, Upload, Space, message } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
+import axiosInstance from "../login/axiosinstance";
 
 const Eventdatatable = () => {
     const [data, setData] = useState([]);
@@ -65,7 +66,7 @@ const Eventdatatable = () => {
                 formData.append("picture", file.originFileObj);
             });
     console.log(formData);
-            await axios.post("http://localhost:8080/updateEventPicture", formData);
+            await axiosInstance.post("/updateEventPicture", formData);
             setIsModalVisible(false);
             setFileList([]);
             setSelectedEventId(null);
